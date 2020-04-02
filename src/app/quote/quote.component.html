@@ -1,7 +1,6 @@
-<!-- <p>quote works!</p> -->
+
 <div class="title" style="text-align:center">
     <img height="10%" src="assets/logo.png">
-    <!-- <h1 id="title2">~App </h1> -->
 </div>
 <hr>
 <div class="container">
@@ -10,8 +9,6 @@
         <div class="col-md-6">
             <div *ngFor='let quote of quotes; let i = index'>
                 <div>
-                    <!-- <h4 id={{i}}>{{quote.quote}}</h4> -->
-
                     <p appHighLight *ngIf="highestUpvote()===quote.upvote && quote.upvote>0">{{quote.quote}}</p>
                     <p *ngIf="highestUpvote()!==quote.upvote || quote.upvote===0">" {{quote.quote}} "</p>
                     <button (click)='quoteLike(i)' class="btn btn-outline-success">Upvote {{quote.upvote}}</button>
