@@ -1,16 +1,4 @@
-<app-quote-form (addquote)="addquote($event)"></app-quote-form>
-<br><br>
-<div class="output">
-    <h2>All quotes entered</h2>
-    <ul>
-        <div *ngFor = 'let winner of winners'>
-            <p appHighlight >The winning quote is : {{winner.userquote}}<br> and the author is {{winner.author}}<br>It's been {{winner.submit|dayCount}}  days since it was submitted<br>Congratulations</p>
-            </div>
-        <li *ngFor='let quote of quotes'>
-            <p>Name :{{quote.Username}}<br>Author : {{quote.author}}<br> Quote :{{quote.userquote}}<br>It was submitted on {{quote.submit|date}}<br>It's been {{quote.submit|dayCount}} days since it was submitted<br></p>
-            <button class="btn btn-warning" (click)=delete()>Delete Quote</button><br><br>
-                <button class="btn btn-success"  (click)="upvote(quote)" (click)="bestquote()">Upvote</button><br> <p>Votes:{{quote.Upvote}}</p>
-                <button class="btn btn-danger"(click)="downvote(quote)" >Downvote</button><p>Votes: {{quote.Downvote}}</p>
-        </li>
-      </ul>
-</div>
+<p>Author:{{quote.author}}</p>
+<p>posted {{quote.completeDate|timeCount}} days ago,by {{quote.name}}</p>
+
+<button (click)='quoteDelete(true)' class="btn btn-outline-danger">Delete Quote</button>
