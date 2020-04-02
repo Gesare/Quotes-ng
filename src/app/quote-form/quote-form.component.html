@@ -6,25 +6,25 @@
       <div class="form-group">
 
           <label for="name">Write your name:</label>
-          <input type="text" required class="form-control" id="name">
+          <input type="text" required class="form-control" [(ngModel)]="newquote.Username" id="name">
 
       </div>
       <div class="form-group">
 
           <label for="aname"> Write the authors:</label>
           <br>
-          <input type="text" required class="form-control" id="aname">
+          <input type="text" required class="form-control"[(ngModel)]="newquote.author" id="aname">
 
       </div>
       <div class="form-group">
 
           <label for="quote">Write the Quote..</label>
-          <textarea class="form-control" id="description" rows="4" required></textarea>
+          <textarea class="form-control" id="quote" rows="4" [(ngModel)]="newquote.userquote"  required ></textarea>
 
       </div>
       <div class="form-group">
           <label for="complete">Pick the date today:</label>
-          <input type='date' id="complete" required>
+          <input type='date' id="complete" [(ngModel)]="newquote.submit" required>
       </div>
   </form>
 </div>
