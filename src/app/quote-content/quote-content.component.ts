@@ -6,7 +6,7 @@ import { Quote } from '../quotes';
   templateUrl: './quote-content.component.html',
   styleUrls: ['./quote-content.component.css']
 })
-export class QuoteDetailComponent implements OnInit {
+export class QuoteContentComponent implements OnInit {
 
   @Input() quote: Quote;
   @Output() isDelete = new EventEmitter<boolean>();
