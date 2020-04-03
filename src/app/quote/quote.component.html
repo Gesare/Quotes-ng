@@ -8,15 +8,17 @@
             <div *ngFor='let quote of quotes; let i = index'>
                  <p appHighLight *ngIf="highestUpvote()===quote.upvote && quote.upvote>0">{{quote.quote}}</p>
                  <p *ngIf="highestUpvote()!==quote.upvote || quote.upvote===0">" {{quote.quote}} "</p>
-                 <button (click)='toggleDetails(i)' class="btn btn-outline-warning">Toggle Details</button>
+                 <button (click)='toggleDetails(i)' class="btn btn-warning">Toggle Details</button>
                  <br>
-                 <button (click)='quoteLike(i)' class="btn btn-outline-success">Upvote {{quote.upvote}}</button>
-                 <button (click)='quoteUnlike(i)' class="btn btn-outline-primary">Downvote
+                 <button (click)='quoteLike(i)' class="btn btn-success">Upvote {{quote.upvote}}</button>
+                 <button (click)='quoteUnlike(i)' class="btn btn-primary">Downvote
                     {{quote.downvote}}</button>
+                  
                   <br>
                     <div class="col-md-6">
                         <app-quote-content *ngIf='quote.showDescription'[quote]='quote' (isDelete)='deleteQuote($event, i)'>
                         </app-quote-content>
+                        <hr>
                     </div>
             </div>
         </div>

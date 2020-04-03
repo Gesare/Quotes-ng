@@ -5,7 +5,7 @@
     <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
         <div class="form-group">
 
-            <label for="new Quote">Quote</label>
+            <label for="new Quote">Write your quote:</label>
             <textarea class="form-control" id="quote" rows="4" [(ngModel)]="newQuote.quote" name="quote"
                 #quote='ngModel' required></textarea>
             <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
@@ -16,7 +16,7 @@
 
         <div class="form-group">
 
-            <label for="Author">Author:</label>
+            <label for="Author">Name of the author:</label>
             <input type="text" class="form-control" id="author" [(ngModel)]="newQuote.author" name="author"
                 #author='ngModel' required>
         
@@ -27,7 +27,7 @@
 
         <div class="form-group">
 
-            <label for="Author">your name:</label>
+            <label for="Author">Write your name:</label>
             <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel'
                 required>
 
