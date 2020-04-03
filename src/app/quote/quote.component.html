@@ -1,25 +1,26 @@
-<div class="title" style="text-align:center">
-</div>
+<h1 style="text-align:center">QUOTES CORNER..</h1>
+<h4 style="text-align:center">We provide you with quotes to cheer you up.You can also add yours.</h4>
 <div class="container">
   <hr>
     <div class="row">
         <div class="col-md-6">
             <div *ngFor='let quote of quotes; let i = index'>
-                <div>
-                    <p appHighLight *ngIf="highestUpvote()===quote.upvote && quote.upvote>0">{{quote.quote}}</p>
-                    <p *ngIf="highestUpvote()!==quote.upvote || quote.upvote===0">" {{quote.quote}} "</p>
-                    <button (click)='toggleDetails(i)' class="btn btn-outline-warning">Toggle Details</button>
-                    <br>
-                    <button (click)='quoteLike(i)' class="btn btn-outline-success">Upvote {{quote.upvote}}</button>
-                    <button (click)='quoteUnlike(i)' class="btn btn-outline-primary">Downvote
-                        {{quote.downvote}}</button>
-                    <br>
-                <div class="col-md-6">
-                    <app-quote-content *ngIf='quote.showDescription'[quote]='quote' (isDelete)='deleteQuote($event, i)'>
-                    </app-quote-content>
-                </div>
+                 <p appHighLight *ngIf="highestUpvote()===quote.upvote && quote.upvote>0">{{quote.quote}}</p>
+                 <p *ngIf="highestUpvote()!==quote.upvote || quote.upvote===0">" {{quote.quote}} "</p>
+                 <button (click)='toggleDetails(i)' class="btn btn-outline-warning">Toggle Details</button>
+                 <br>
+                 <button (click)='quoteLike(i)' class="btn btn-outline-success">Upvote {{quote.upvote}}</button>
+                 <button (click)='quoteUnlike(i)' class="btn btn-outline-primary">Downvote
+                    {{quote.downvote}}</button>
+                  <br>
+                    <div class="col-md-6">
+                        <app-quote-content *ngIf='quote.showDescription'[quote]='quote' (isDelete)='deleteQuote($event, i)'>
+                        </app-quote-content>
+                    </div>
             </div>
         </div>
        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
 </div>
+
+<div>
