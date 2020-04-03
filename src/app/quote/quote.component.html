@@ -5,7 +5,7 @@
   <hr>
     <div class="row">
         <div class="col-md-6">
-            <div *ngFor='let quote of quotes; let i = index'>
+                 <div *ngFor='let quote of quotes; let i = index'>
                  <p appHighLight *ngIf="highestUpvote()===quote.upvote && quote.upvote>0">{{quote.quote}}</p>
                  <p *ngIf="highestUpvote()!==quote.upvote || quote.upvote===0">" {{quote.quote}} "</p>
                  <button (click)='toggleDetails(i)' class="btn btn-warning">Toggle Details</button>

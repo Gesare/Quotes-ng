@@ -34,12 +34,12 @@ export class QuoteComponent implements OnInit {
   max:number
   i:number
 
-  addQuote(emittedQuote){
+  addquote(emittedQuote){
     this.quotes.push(emittedQuote)
   }
 
   quoteLike(index){
-      this.quotes[index].upvote+=1;
+     this.quotes[index].upvote+=1;
   }
   quoteUnlike(index){
     this.quotes[index].downvote+=1;
